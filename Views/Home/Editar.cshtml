@@ -1,0 +1,66 @@
+﻿@model RegistroPacientes.Models.Paciente
+
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar</h1>
+
+<h4>Paciente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="cod_pac" />
+            <div class="form-group">
+                <label asp-for="app_pate" class="control-label"></label>
+                <input asp-for="app_pate" class="form-control" />
+                <span asp-validation-for="app_pate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="app_mate" class="control-label"></label>
+                <input asp-for="app_mate" class="form-control" />
+                <span asp-validation-for="app_mate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nom_paci" class="control-label"></label>
+                <input asp-for="nom_paci" class="form-control" />
+                <span asp-validation-for="nom_paci" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cod_dist" class="control-label"></label>
+                <input asp-for="cod_dist" class="form-control" />
+                <span asp-validation-for="cod_dist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="des_direcc" class="control-label"></label>
+                <input asp-for="des_direcc" class="form-control" />
+                <span asp-validation-for="des_direcc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fec_registro" class="control-label"></label>
+                <input asp-for="fec_registro" class="form-control" />
+                <span asp-validation-for="fec_registro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cod_esta" class="control-label"></label>
+                <input asp-for="cod_esta" class="form-control" />
+                <span asp-validation-for="cod_esta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Listar" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

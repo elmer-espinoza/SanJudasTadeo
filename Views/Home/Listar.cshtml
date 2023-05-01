@@ -1,0 +1,72 @@
+﻿@model IEnumerable<RegistroPacientes.Models.Paciente>
+
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Listar</h1>
+
+<p>
+    <a asp-action="Crear" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.app_pate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.app_mate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nom_paci)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cod_dist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.des_direcc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fec_registro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cod_esta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.app_pate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.app_mate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom_paci)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cod_dist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.des_direcc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fec_registro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cod_esta)
+            </td>
+            <td>
+                    <a asp-action="Editar" class="btn btn-primary"  asp-route-id="@item.cod_pac">Edit</a> 
+                    <a asp-action="Detalles" class="btn btn-warning"  asp-route-id="@item.cod_pac">Details</a> 
+                    <a asp-action="Eliminar" class="btn btn-danger" asp-route-id="@item.cod_pac">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

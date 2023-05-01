@@ -1,0 +1,61 @@
+﻿@model RegistroPacientes.Models.Paciente
+
+@{
+    ViewData["Title"] = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Paciente</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.app_pate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.app_pate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.app_mate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.app_mate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nom_paci)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nom_paci)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cod_dist)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cod_dist)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.des_direcc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.des_direcc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fec_registro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fec_registro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cod_esta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cod_esta)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Editar" class="btn btn-warning"  asp-route-id="@Model?.cod_pac">Edit</a> 
+    <a asp-action="Listar" class="btn btn-secondary">Back to List</a>
+</div>
